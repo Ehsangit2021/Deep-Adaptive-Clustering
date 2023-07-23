@@ -35,7 +35,8 @@ for i in range(len(X)):
     y_true = torch.Tensor([y[i]]).long()
 
     # Cluster the data point
-    cluster = kmeans.predict(x.reshape(1, -1))[0]
+    # kmeans.fit_predict
+    cluster = kmeans.fit_predict(x.reshape(1, -1))[0]
 
     # Train the model on the data point
     optimizer.zero_grad()
